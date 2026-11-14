@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FFFCF8;
+    color: #302747;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Duolingo-inspired Tactile Interactive Utilities */
+@layer components {
+  /* Tactile Primary Button */
+  .btn-tactile-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-2xl bg-[#7956D8] text-white font-extrabold text-sm 
+           shadow-[0_4px_0_0_#6542BC] hover:bg-[#6e4bc9] hover:-translate-y-0.5 active:translate-y-1 active:shadow-none 
+           transition-all duration-150 cursor-pointer select-none;
+  }
+
+  /* Tactile Secondary Button */
+  .btn-tactile-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-white border-2 border-[#E9DFFF] text-[#302747] font-bold text-xs sm:text-sm 
+           shadow-[0_2px_0_0_#E9DFFF] hover:border-[#7956D8] hover:text-[#7956D8] hover:bg-[#FAF7FF] hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none 
+           transition-all duration-150 cursor-pointer select-none;
+  }
+
+  /* Tactile Action Orange Button */
+  .btn-tactile-orange {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-2xl bg-[#FF914D] text-white font-extrabold text-sm 
+           shadow-[0_4px_0_0_#d96f2e] hover:bg-[#fa8238] hover:-translate-y-0.5 active:translate-y-1 active:shadow-none 
+           transition-all duration-150 cursor-pointer select-none;
+  }
+
+  /* Duolingo-style Soft Interactive Card */
+  .card-tactile {
+    @apply bg-white border-2 border-[#E9DFFF] rounded-3xl p-4 sm:p-5 lg:p-6 
+           shadow-[0_4px_16px_rgba(48,39,71,0.04)] 
+           hover:border-[#7956D8] hover:shadow-[0_12px_24px_-4px_rgba(121,86,216,0.12),0_4px_8px_-2px_rgba(48,39,71,0.04)] 
+           hover:-translate-y-1 active:translate-y-0 
+           transition-all duration-200 ease-out;
+  }
+
+  /* Soft Badge Pill */
+  .badge-mint {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#DDF3E8] border border-[#A7F3D0] text-[#065F46] text-xs font-extrabold tracking-wide;
+  }
+
+  .badge-peach {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#FFE1D2] border border-[#f0c3ad] text-[#FF914D] text-xs font-extrabold tracking-wide;
+  }
+
+  .badge-purple {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#F3EDFF] border border-[#E9DFFF] text-[#7956D8] text-xs font-extrabold tracking-wide;
+  }
+}
+
+/* Reduced Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
